@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\projects\prj_fpga_xilinx\prj_VE-XC6SLX9\xc6_prj\tmp\memory_tst\font_test.ncd
+OUTFILE=E:\projects\prj_fpga_xilinx\prj_VE-XC6SLX9\xc6_prj\tmp\memory_tst\font_test.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=E:\projects\prj_fpga_xilinx\prj_VE-XC6SLX9\xc6_prj\tmp\memory_tst
+LICENSE=WebPack
+USER_INFO=211218651_0_0_453

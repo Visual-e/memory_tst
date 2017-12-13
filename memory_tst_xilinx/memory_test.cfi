@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator P.20131013
+# Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION P.20131013
+DATE            11/20/2017 - 02:12
+SOURCE          E:\projects\prj_fpga_xilinx\prj_VE-XC6SLX9\xc6_prj\projects\memory_tst\memory_test.mcs
+DEVICE          16384K
+DATA_WIDTH      1
+FILL_DATA       0xFF
+SIGNATURE       0xF9DFD846
+START_ADDRESS   0x00000000 END_ADDRESS 0x0005327B DIRECTION_UP   "E:/projects/prj_fpga_xilinx/prj_VE-XC6SLX9/xc6_prj/projects/memory_tst/font_test.bit" 6slx9tqg144
