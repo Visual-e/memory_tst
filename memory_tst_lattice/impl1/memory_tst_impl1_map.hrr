@@ -1,0 +1,53 @@
+---------------------------------------------------
+Report for cell font_test
+   Instance path: font_test
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     150.00        100.0
+                                  LUT4	     143.00        100.0
+                                 IOBUF	         37        100.0
+                                PFUREG	        111        100.0
+                                RIPPLE	         77        100.0
+                                   EBR	          2        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                              vga_sync	          1        14.0
+                           memory_test	          1        42.7
+                     Pixel_On_Text(27)	          1        42.9
+---------------------------------------------------
+Report for cell vga_sync
+   Instance path: font_test/vga_sync_unit
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      21.00        14.0
+                                  LUT4	      17.00        11.9
+                                PFUREG	         23        20.7
+                                RIPPLE	         12        15.6
+---------------------------------------------------
+Report for cell Pixel_On_Text(27)
+   Instance path: font_test/textElement1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      64.33        42.9
+                                  LUT4	      76.33        53.4
+                                PFUREG	          1         0.9
+                                RIPPLE	         35        45.5
+                                   EBR	          2        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                              Font_Rom	          1         0.0
+---------------------------------------------------
+Report for cell Font_Rom
+   Instance path: font_test/textElement1/fontRom
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                   EBR	          2        100.0
+---------------------------------------------------
+Report for cell memory_test
+   Instance path: font_test/memory_test_unit
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      64.08        42.7
+                                  LUT4	      47.67        33.3
+                                PFUREG	         87        78.4
+                                RIPPLE	         30        39.0

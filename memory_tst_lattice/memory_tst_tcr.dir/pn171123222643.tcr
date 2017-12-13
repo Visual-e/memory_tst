@@ -1,0 +1,7 @@
+#Start recording tcl command: 11/23/2017 22:25:40
+#Project Location: E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst; Project name: memory_tst
+prj_project open "E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/memory_tst.ldf"
+pgr_project open "E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/impl1/impl1.xcf"
+pgr_program run
+prj_project close
+#Stop recording: 11/23/2017 22:26:43

@@ -1,0 +1,439 @@
+
+Loading design for application trce from file memory_tst_impl1_map.ncd.
+Design name: font_test
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HC
+Package:     TQFP144
+Performance: 4
+Loading device for application trce from file 'xo2c7000.nph' in environment: D:/dev/lattice/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.39.
+Performance Hardware Data Status:   Final          Version 34.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.9.1.119
+Tue Nov 21 22:57:51 2017
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o memory_tst_impl1.tw1 -gui memory_tst_impl1_map.ncd memory_tst_impl1.prf 
+Design file:     memory_tst_impl1_map.ncd
+Preference file: memory_tst_impl1.prf
+Device,speed:    LCMXO2-7000HC,4
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+Report Type:     based on TRACE automatically generated preferences
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "ext_clk_c" 99.295000 MHz ;
+            2323 items scored, 52 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 0.889ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i17  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i31  (to ext_clk_c +)
+
+   Delay:              10.794ns  (54.1% logic, 45.9% route), 21 logic levels.
+
+ Constraint Details:
+
+     10.794ns physical path delay memory_test_unit/SLICE_71 to memory_test_unit/SLICE_55 exceeds
+     10.071ns delay constraint less
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 0.889ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_71 to memory_test_unit/SLICE_55:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452 */SLICE_71.CLK to *t/SLICE_71.Q1 memory_test_unit/SLICE_71 (from ext_clk_c)
+ROUTE         4   e 1.234 *t/SLICE_71.Q1 to *t/SLICE_99.C0 tmp1_0
+CTOF_DEL    ---     0.495 *t/SLICE_99.C0 to *t/SLICE_99.F0 memory_test_unit/SLICE_99
+ROUTE         1   e 1.234 *t/SLICE_99.F0 to */SLICE_151.A0 memory_test_unit/n31
+CTOF_DEL    ---     0.495 */SLICE_151.A0 to */SLICE_151.F0 memory_test_unit/SLICE_151
+ROUTE         1   e 1.234 */SLICE_151.F0 to */SLICE_150.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495 */SLICE_150.B0 to */SLICE_150.F0 memory_test_unit/SLICE_150
+ROUTE         2   e 1.234 */SLICE_150.F0 to *t/SLICE_64.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889 *t/SLICE_64.A1 to */SLICE_64.FCO memory_test_unit/SLICE_64
+ROUTE         1   e 0.001 */SLICE_64.FCO to */SLICE_60.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162 */SLICE_60.FCI to */SLICE_60.FCO memory_test_unit/SLICE_60
+ROUTE         1   e 0.001 */SLICE_60.FCO to */SLICE_58.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162 */SLICE_58.FCI to */SLICE_58.FCO memory_test_unit/SLICE_58
+ROUTE         1   e 0.001 */SLICE_58.FCO to */SLICE_57.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162 */SLICE_57.FCI to */SLICE_57.FCO memory_test_unit/SLICE_57
+ROUTE         1   e 0.001 */SLICE_57.FCO to */SLICE_56.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162 */SLICE_56.FCI to */SLICE_56.FCO memory_test_unit/SLICE_56
+ROUTE         1   e 0.001 */SLICE_56.FCO to */SLICE_54.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162 */SLICE_54.FCI to */SLICE_54.FCO memory_test_unit/SLICE_54
+ROUTE         1   e 0.001 */SLICE_54.FCO to */SLICE_51.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162 */SLICE_51.FCI to */SLICE_51.FCO memory_test_unit/SLICE_51
+ROUTE         1   e 0.001 */SLICE_51.FCO to */SLICE_50.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162 */SLICE_50.FCI to */SLICE_50.FCO memory_test_unit/SLICE_50
+ROUTE         1   e 0.001 */SLICE_50.FCO to */SLICE_48.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162 */SLICE_48.FCI to */SLICE_48.FCO memory_test_unit/SLICE_48
+ROUTE         1   e 0.001 */SLICE_48.FCO to */SLICE_69.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162 */SLICE_69.FCI to */SLICE_69.FCO memory_test_unit/SLICE_69
+ROUTE         1   e 0.001 */SLICE_69.FCO to */SLICE_66.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162 */SLICE_66.FCI to */SLICE_66.FCO memory_test_unit/SLICE_66
+ROUTE         1   e 0.001 */SLICE_66.FCO to */SLICE_65.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162 */SLICE_65.FCI to */SLICE_65.FCO memory_test_unit/SLICE_65
+ROUTE         1   e 0.001 */SLICE_65.FCO to */SLICE_63.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162 */SLICE_63.FCI to */SLICE_63.FCO memory_test_unit/SLICE_63
+ROUTE         1   e 0.001 */SLICE_63.FCO to */SLICE_62.FCI memory_test_unit/n3196
+FCITOFCO_D  ---     0.162 */SLICE_62.FCI to */SLICE_62.FCO memory_test_unit/SLICE_62
+ROUTE         1   e 0.001 */SLICE_62.FCO to */SLICE_61.FCI memory_test_unit/n3197
+FCITOFCO_D  ---     0.162 */SLICE_61.FCI to */SLICE_61.FCO memory_test_unit/SLICE_61
+ROUTE         1   e 0.001 */SLICE_61.FCO to */SLICE_59.FCI memory_test_unit/n3198
+FCITOFCO_D  ---     0.162 */SLICE_59.FCI to */SLICE_59.FCO memory_test_unit/SLICE_59
+ROUTE         1   e 0.001 */SLICE_59.FCO to */SLICE_55.FCI memory_test_unit/n3199
+FCITOF0_DE  ---     0.585 */SLICE_55.FCI to *t/SLICE_55.F0 memory_test_unit/SLICE_55
+ROUTE         1   e 0.001 *t/SLICE_55.F0 to */SLICE_55.DI0 memory_test_unit/n134 (to ext_clk_c)
+                  --------
+                   10.794   (54.1% logic, 45.9% route), 21 logic levels.
+
+Warning:  91.241MHz is the maximum frequency for this preference.
+
+
+================================================================================
+Preference: FREQUENCY NET "pixel_tick" 61.323000 MHz ;
+            4096 items scored, 4096 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 21.595ns (weighted slack = -364.167ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i2  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              22.288ns  (42.4% logic, 57.6% route), 21 logic levels.
+
+ Constraint Details:
+
+     22.288ns physical path delay vga_sync_unit/SLICE_2 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+      0.274ns LSR_SET requirement (totaling 0.693ns) by 21.595ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_2 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452 *t/SLICE_2.CLK to *it/SLICE_2.Q0 vga_sync_unit/SLICE_2 (from ext_clk_c)
+ROUTE         4   e 1.234 *it/SLICE_2.Q0 to *1/SLICE_46.A1 pixel_x_1
+C1TOFCO_DE  ---     0.889 *1/SLICE_46.A1 to */SLICE_46.FCO textElement1/SLICE_46
+ROUTE         1   e 0.001 */SLICE_46.FCO to */SLICE_45.FCI textElement1/n3220
+FCITOFCO_D  ---     0.162 */SLICE_45.FCI to */SLICE_45.FCO textElement1/SLICE_45
+ROUTE         1   e 0.001 */SLICE_45.FCO to */SLICE_44.FCI textElement1/n3221
+FCITOFCO_D  ---     0.162 */SLICE_44.FCI to */SLICE_44.FCO textElement1/SLICE_44
+ROUTE         1   e 0.001 */SLICE_44.FCO to */SLICE_43.FCI textElement1/n3222
+FCITOFCO_D  ---     0.162 */SLICE_43.FCI to */SLICE_43.FCO textElement1/SLICE_43
+ROUTE         1   e 0.001 */SLICE_43.FCO to */SLICE_42.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162 */SLICE_42.FCI to */SLICE_42.FCO textElement1/SLICE_42
+ROUTE         1   e 0.001 */SLICE_42.FCO to */SLICE_41.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643 */SLICE_41.FCI to *1/SLICE_41.F1 textElement1/SLICE_41
+ROUTE         1   e 1.234 *1/SLICE_41.F1 to */SLICE_140.B0 textElement1/n1416
+CTOF_DEL    ---     0.495 */SLICE_140.B0 to */SLICE_140.F0 textElement1/SLICE_140
+ROUTE        19   e 1.234 */SLICE_140.F0 to */SLICE_103.B1 textElement1/n180
+CTOF_DEL    ---     0.495 */SLICE_103.B1 to */SLICE_103.F1 textElement1/SLICE_103
+ROUTE        27   e 1.234 */SLICE_103.F1 to */SLICE_136.A0 n3682
+CTOF_DEL    ---     0.495 */SLICE_136.A0 to */SLICE_136.F0 textElement1/SLICE_136
+ROUTE         1   e 1.234 */SLICE_136.F0 to   SLICE_129.B1 displayText_14_0
+CTOF_DEL    ---     0.495   SLICE_129.B1 to   SLICE_129.F1 SLICE_129
+ROUTE         1   e 0.480   SLICE_129.F1 to   SLICE_129.C0 n11
+CTOF_DEL    ---     0.495   SLICE_129.C0 to   SLICE_129.F0 SLICE_129
+ROUTE         1   e 1.234   SLICE_129.F0 to */SLICE_112.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721 */SLICE_112.D1 to *LICE_112.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1   e 0.001 *LICE_112.OFX0 to *SLICE_125.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241 *SLICE_125.FXA to *LICE_125.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2   e 1.234 *LICE_125.OFX1 to    SLICE_19.A0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023    SLICE_19.A0 to   SLICE_19.FCO SLICE_19
+ROUTE         1   e 0.001   SLICE_19.FCO to   SLICE_15.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162   SLICE_15.FCI to   SLICE_15.FCO SLICE_15
+ROUTE         1   e 0.001   SLICE_15.FCO to   SLICE_12.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162   SLICE_12.FCI to   SLICE_12.FCO SLICE_12
+ROUTE         1   e 0.001   SLICE_12.FCO to   SLICE_39.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585   SLICE_39.FCI to    SLICE_39.F0 SLICE_39
+ROUTE         5   e 1.234    SLICE_39.F0 to */SLICE_111.A1 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721 */SLICE_111.A1 to *LICE_111.OFX0 textElement1/i1707/SLICE_111
+ROUTE         1   e 0.001 *LICE_111.OFX0 to *SLICE_111.FXB textElement1/n3519
+FXTOOFX_DE  ---     0.241 *SLICE_111.FXB to *LICE_111.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1   e 1.234 *LICE_111.OFX1 to */SLICE_165.A1 textElement1/n3522
+CTOF_DEL    ---     0.495 */SLICE_165.A1 to */SLICE_165.F1 textElement1/SLICE_165
+ROUTE         1   e 1.234 */SLICE_165.F1 to */SLICE_84.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   22.288   (42.4% logic, 57.6% route), 21 logic levels.
+
+Warning:   2.628MHz is the maximum frequency for this preference.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "ext_clk_c" 99.295000 MHz |             |             |
+;                                       |   99.295 MHz|   91.241 MHz|  21 *
+                                        |             |             |
+FREQUENCY NET "pixel_tick" 61.323000    |             |             |
+MHz ;                                   |   61.323 MHz|    2.628 MHz|  21 *
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+2 preferences(marked by "*" above) not met.
+
+----------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+----------------------------------------------------------------------------
+textElement1/fontAddress_10             |       5|    4028|     97.11%
+                                        |        |        |
+textElement1/pixel_N_282                |       1|    4028|     97.11%
+                                        |        |        |
+textElement1/n3168                      |       1|    3889|     93.76%
+                                        |        |        |
+textElement1/n180                       |      19|    3665|     88.36%
+                                        |        |        |
+textElement1/n3522                      |       1|    3426|     82.59%
+                                        |        |        |
+textElement1/n3167                      |       1|    3168|     76.37%
+                                        |        |        |
+textElement1/n3224                      |       1|    3107|     74.90%
+                                        |        |        |
+textElement1/n1416                      |       1|    3107|     74.90%
+                                        |        |        |
+textElement1/n3223                      |       1|    2559|     61.69%
+                                        |        |        |
+textElement1/n3166                      |       1|    2366|     57.04%
+                                        |        |        |
+textElement1/n3222                      |       1|    1927|     46.46%
+                                        |        |        |
+textElement1/n3518                      |       1|    1714|     41.32%
+                                        |        |        |
+textElement1/n3519                      |       1|    1712|     41.27%
+                                        |        |        |
+textElement1/n3221                      |       1|    1339|     32.28%
+                                        |        |        |
+textElement1/fontAddress_31_N_236_0     |       2|    1338|     32.26%
+                                        |        |        |
+n3682                                   |      27|    1336|     32.21%
+                                        |        |        |
+textElement1/fontAddress_31_N_236_1     |       1|    1028|     24.78%
+                                        |        |        |
+textElement1/n3531                      |       1|     979|     23.60%
+                                        |        |        |
+pixel_x_1                               |       4|     911|     21.96%
+                                        |        |        |
+textElement1/n3220                      |       1|     777|     18.73%
+                                        |        |        |
+textElement1/n3681                      |      20|     673|     16.22%
+                                        |        |        |
+pixel_x_2                               |       4|     634|     15.28%
+                                        |        |        |
+textElement1/n3683                      |       6|     620|     14.95%
+                                        |        |        |
+textElement1/n3616                      |       1|     602|     14.51%
+                                        |        |        |
+textElement1/n3680                      |      15|     536|     12.92%
+                                        |        |        |
+textElement1/n3675                      |      11|     488|     11.76%
+                                        |        |        |
+textElement1/n2583                      |       1|     458|     11.04%
+                                        |        |        |
+textElement1/fontAddress_31_N_236_4     |       1|     447|     10.78%
+                                        |        |        |
+textElement1/n2992                      |       3|     439|     10.58%
+                                        |        |        |
+pixel_x_3                               |       4|     436|     10.51%
+                                        |        |        |
+----------------------------------------------------------------------------
+
+
+Clock Domains Analysis
+------------------------
+
+Found 2 clocks:
+
+Clock Domain: pixel_tick   Source: vga_sync_unit/SLICE_82.Q0   Loads: 11
+   Covered under: FREQUENCY NET "pixel_tick" 61.323000 MHz ;
+
+   Data transfers from:
+   Clock Domain: ext_clk_c   Source: ext_clk.PAD
+      Covered under: FREQUENCY NET "pixel_tick" 61.323000 MHz ;   Transfers: 48
+
+Clock Domain: ext_clk_c   Source: ext_clk.PAD   Loads: 63
+   Covered under: FREQUENCY NET "ext_clk_c" 99.295000 MHz ;
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 4148  Score: 1241669730
+Cumulative negative slack: 1241669730
+
+Constraints cover 36875 paths, 6 nets, and 1022 connections (94.63% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.9.1.119
+Tue Nov 21 22:57:52 2017
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o memory_tst_impl1.tw1 -gui memory_tst_impl1_map.ncd memory_tst_impl1.prf 
+Design file:     memory_tst_impl1_map.ncd
+Preference file: memory_tst_impl1.prf
+Device,speed:    LCMXO2-7000HC,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "ext_clk_c" 99.295000 MHz ;
+            2323 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.447ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/sram_we_reg_104  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/sram_we_reg_104  (to ext_clk_c +)
+
+   Delay:               0.434ns  (53.9% logic, 46.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.434ns physical path delay SLICE_101 to SLICE_101 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling -0.013ns) by 0.447ns
+
+ Physical Path Details:
+
+      Data path SLICE_101 to SLICE_101:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133  SLICE_101.CLK to   SLICE_101.Q0 SLICE_101 (from ext_clk_c)
+ROUTE         2   e 0.199   SLICE_101.Q0 to   SLICE_101.C0 sram_we_c
+CTOF_DEL    ---     0.101   SLICE_101.C0 to   SLICE_101.F0 SLICE_101
+ROUTE         1   e 0.001   SLICE_101.F0 to  SLICE_101.DI0 memory_test_unit/n2473 (to ext_clk_c)
+                  --------
+                    0.434   (53.9% logic, 46.1% route), 2 logic levels.
+
+
+================================================================================
+Preference: FREQUENCY NET "pixel_tick" 61.323000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.596ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i1  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_81(ASIC)  (to pixel_tick +)
+
+   Delay:               0.648ns  (20.5% logic, 79.5% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.648ns physical path delay vga_sync_unit/SLICE_0 to textElement1/fontRom/mux_81 meets
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint requirement (totaling 0.052ns) by 0.596ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_0 to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133 *t/SLICE_0.CLK to *it/SLICE_0.Q1 vga_sync_unit/SLICE_0 (from ext_clk_c)
+ROUTE         4   e 0.515 *it/SLICE_0.Q1 to *om/mux_81.AD3 fontAddress_0 (to pixel_tick)
+                  --------
+                    0.648   (20.5% logic, 79.5% route), 1 logic levels.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "ext_clk_c" 99.295000 MHz |             |             |
+;                                       |     0.000 ns|     0.447 ns|   2  
+                                        |             |             |
+FREQUENCY NET "pixel_tick" 61.323000    |             |             |
+MHz ;                                   |     0.000 ns|     0.596 ns|   1  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 2 clocks:
+
+Clock Domain: pixel_tick   Source: vga_sync_unit/SLICE_82.Q0   Loads: 11
+   Covered under: FREQUENCY NET "pixel_tick" 61.323000 MHz ;
+
+   Data transfers from:
+   Clock Domain: ext_clk_c   Source: ext_clk.PAD
+      Covered under: FREQUENCY NET "pixel_tick" 61.323000 MHz ;   Transfers: 48
+
+Clock Domain: ext_clk_c   Source: ext_clk.PAD   Loads: 63
+   Covered under: FREQUENCY NET "ext_clk_c" 99.295000 MHz ;
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 36875 paths, 6 nets, and 1022 connections (94.63% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 4148 (setup), 0 (hold)
+Score: 1241669730 (setup), 0 (hold)
+Cumulative negative slack: 1241669730 (1241669730+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+

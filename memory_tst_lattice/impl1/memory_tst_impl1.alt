@@ -1,0 +1,45 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Wed Nov 22 00:12:19 2017 *
+NOTE DESIGN NAME: font_test *
+NOTE DEVICE NAME: LCMXO2-7000HC-4TQFP144 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS reset : 11 : in *
+NOTE PINS ext_clk : 49 : in *
+NOTE PINS sram_we : 85 : out *
+NOTE PINS sram_oe : 107 : out *
+NOTE PINS sram_cs : 73 : out *
+NOTE PINS sram_a[0] : 78 : out *
+NOTE PINS sram_a[1] : 77 : out *
+NOTE PINS sram_a[2] : 76 : out *
+NOTE PINS sram_a[3] : 75 : out *
+NOTE PINS sram_a[4] : 74 : out *
+NOTE PINS sram_a[5] : 86 : out *
+NOTE PINS sram_a[6] : 87 : out *
+NOTE PINS sram_a[7] : 89 : out *
+NOTE PINS sram_a[8] : 91 : out *
+NOTE PINS sram_a[9] : 92 : out *
+NOTE PINS sram_a[10] : 93 : out *
+NOTE PINS sram_a[11] : 94 : out *
+NOTE PINS sram_a[12] : 95 : out *
+NOTE PINS sram_a[13] : 96 : out *
+NOTE PINS sram_a[14] : 97 : out *
+NOTE PINS sram_a[15] : 106 : out *
+NOTE PINS sram_a[16] : 105 : out *
+NOTE PINS sram_a[17] : 104 : out *
+NOTE PINS sram_a[18] : 69 : out *
+NOTE PINS rgb[0] : 13 : out *
+NOTE PINS rgb[1] : 19 : out *
+NOTE PINS rgb[2] : 23 : out *
+NOTE PINS vsync : 28 : out *
+NOTE PINS hsync : 27 : out *
+NOTE PINS sram_d[0] : 81 : inout *
+NOTE PINS sram_d[1] : 82 : inout *
+NOTE PINS sram_d[2] : 83 : inout *
+NOTE PINS sram_d[3] : 84 : inout *
+NOTE PINS sram_d[4] : 98 : inout *
+NOTE PINS sram_d[6] : 100 : inout *
+NOTE PINS sram_d[5] : 99 : inout *
+NOTE PINS sram_d[7] : 103 : inout *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: on *

@@ -1,0 +1,46 @@
+-a "MachXO2"
+-d LCMXO2-7000HC
+-t TQFP144
+-s 4
+
+-optimization_goal Balanced
+-bram_utilization 100
+-ramstyle Auto
+-romstyle auto
+-dsp_utilization 100
+-use_dsp 1
+-use_carry_chain 1
+-carry_chain_length 0
+-force_gsr Auto
+-resource_sharing 1
+-propagate_constants 1
+-remove_duplicate_regs 1
+-mux_style Auto
+-max_fanout 1000
+-fsm_encoding_style Auto
+-twr_paths 3
+-fix_gated_clocks 1
+-loop_limit 1950
+
+
+
+-use_io_insertion 1
+-resolve_mixed_drivers 0
+-use_io_reg auto
+
+
+-lpf 1
+-lib "work" -vhd "E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/commonPak.vhd"
+"E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/Font_Rom.vhd"
+"E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/font_test.vhd"
+"E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/func_pack.vhd"
+"E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/memory_test.vhd"
+"E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/Pixel_On_Text.vhd"
+"E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/vga_sync.vhd"
+-top font_test
+
+
+-p "D:/dev/lattice/lscc/diamond/3.9_x64/ispfpga/xo2c00/data" "E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst/impl1" "E:/projects/prj_fpga_lattice/prj_VE-LCMXO27000HC/lcmx_prj/projects/memory_tst"
+
+-ngd "memory_tst_impl1.ngd"
+

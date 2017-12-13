@@ -1,0 +1,163 @@
+<HTML>
+<HEAD><TITLE>I/O Timing Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Top"></A><B><U><big>I/O Timing Report</big></U></B>
+Loading design for application iotiming from file memory_tst_impl1.ncd.
+Design name: font_test
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HC
+Package:     TQFP144
+Performance: 5
+Package Status:                     Final          Version 1.39.
+Performance Hardware Data Status:   Final          Version 34.4.
+Loading design for application iotiming from file memory_tst_impl1.ncd.
+Design name: font_test
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HC
+Package:     TQFP144
+Performance: 6
+Package Status:                     Final          Version 1.39.
+Performance Hardware Data Status:   Final          Version 34.4.
+Loading design for application iotiming from file memory_tst_impl1.ncd.
+Design name: font_test
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HC
+Package:     TQFP144
+Performance: M
+Package Status:                     Final          Version 1.39.
+Performance Hardware Data Status:   Final          Version 34.4.
+// Design: font_test
+// Package: TQFP144
+// ncd File: memory_tst_impl1.ncd
+// Version: Diamond (64-bit) 3.9.1.119
+// Written on Tue Nov 21 22:58:18 2017
+// M: Minimum Performance Grade
+// iotiming memory_tst_impl1.ncd memory_tst_impl1.prf -gui
+
+I/O Timing Report (All units are in ns)
+
+Worst Case Results across Performance Grades (M, 6, 5, 4):
+
+// Input Setup and Hold Times
+
+Port      Clock   Edge  Setup Performance_Grade  Hold Performance_Grade
+----------------------------------------------------------------------
+reset     ext_clk R     6.411      4      -1.096     M
+sram_d[0] ext_clk R     8.844      4      -0.848     M
+sram_d[1] ext_clk R     8.593      4      -0.791     M
+sram_d[2] ext_clk R     9.511      4      -1.033     M
+sram_d[3] ext_clk R     9.415      4      -0.984     M
+sram_d[4] ext_clk R     9.703      4      -1.081     M
+sram_d[5] ext_clk R     9.362      4      -1.004     M
+sram_d[6] ext_clk R     9.635      4      -1.021     M
+sram_d[7] ext_clk R     9.731      4      -1.070     M
+
+
+// Clock to Output Delay
+
+Port       Clock   Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
+------------------------------------------------------------------------
+hsync      ext_clk R    11.486         4        3.470          M
+rgb[1]     ext_clk R    16.550         4        4.165          M
+sram_a[0]  ext_clk R     9.472         4        2.903          M
+sram_a[10] ext_clk R     9.370         4        2.885          M
+sram_a[11] ext_clk R     9.494         4        2.909          M
+sram_a[12] ext_clk R     9.924         4        3.008          M
+sram_a[13] ext_clk R     9.640         4        2.937          M
+sram_a[14] ext_clk R    10.990         4        3.279          M
+sram_a[15] ext_clk R    11.412         4        3.373          M
+sram_a[16] ext_clk R    10.929         4        3.286          M
+sram_a[17] ext_clk R    11.023         4        3.316          M
+sram_a[18] ext_clk R     9.305         4        2.857          M
+sram_a[1]  ext_clk R     9.458         4        2.891          M
+sram_a[2]  ext_clk R     9.325         4        2.849          M
+sram_a[3]  ext_clk R     9.022         4        2.769          M
+sram_a[4]  ext_clk R     9.022         4        2.769          M
+sram_a[5]  ext_clk R     9.529         4        2.925          M
+sram_a[6]  ext_clk R    10.268         4        3.114          M
+sram_a[7]  ext_clk R     9.884         4        2.996          M
+sram_a[8]  ext_clk R    10.356         4        3.153          M
+sram_a[9]  ext_clk R     9.464         4        2.915          M
+sram_cs    ext_clk R     9.419         4        2.880          M
+sram_d[0]  ext_clk R     9.754         4        2.523          M
+sram_d[1]  ext_clk R     9.840         4        2.523          M
+sram_d[2]  ext_clk R    10.088         4        2.622          M
+sram_d[3]  ext_clk R    10.088         4        2.622          M
+sram_d[4]  ext_clk R    11.607         4        2.999          M
+sram_d[5]  ext_clk R    11.193         4        2.899          M
+sram_d[6]  ext_clk R    11.193         4        2.899          M
+sram_d[7]  ext_clk R    12.017         4        3.116          M
+sram_oe    ext_clk R    10.536         4        3.188          M
+sram_we    ext_clk R     9.485         4        2.907          M
+vsync      ext_clk R    11.486         4        3.470          M
+
+
+// Internal_Clock to Output
+
+Port   Internal_Clock
+--------------------------------------------------------
+rgb[1] pixel_tick    
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

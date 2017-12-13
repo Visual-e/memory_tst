@@ -1,0 +1,10 @@
+MPARTRCE: MultiPar and Trace Run Manager Tool
+
+Level/       Number       Worst        Timing       Worst        Timing       Run          NCD
+Cost [ncd]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
+----------   --------     -----        ------       -----------  -----------  ----         ------
+5_1   *      0            -237.910     764139530    -1.036       18529        17           Complete
+
+* : Design saved.
+
+par done!

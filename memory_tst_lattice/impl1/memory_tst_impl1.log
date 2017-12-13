@@ -1,0 +1,8 @@
+---- MParTrce Tool Log File ----
+iteration 5_1
+
+par -f memory_tst_impl1.p2t.tmp0 memory_tst_impl1_map.ncd memory_tst_impl1.dir\5_1.dir memory_tst_impl1.prf -gui  
+Copy 5_1.ncd to memory_tst_impl1.ncd
+
+
+

@@ -1,0 +1,2950 @@
+<HTML>
+<HEAD><TITLE>Lattice TRACE Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Par_Twr"></A><B><U><big>Place & Route TRACE Report</big></U></B>
+
+Loading design for application trce from file memory_tst_impl1.ncd.
+Design name: font_test
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HC
+Package:     TQFP144
+Performance: 4
+Loading device for application trce from file 'xo2c7000.nph' in environment: D:/dev/lattice/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.39.
+Performance Hardware Data Status:   Final          Version 34.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+<A name="Par_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.9.1.119</big></U></B>
+Tue Nov 21 22:58:15 2017
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="ptwr_set_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 4 -sphld m -o memory_tst_impl1.twr -gui memory_tst_impl1.ncd memory_tst_impl1.prf 
+Design file:     memory_tst_impl1.ncd
+Preference file: memory_tst_impl1.prf
+Device,speed:    LCMXO2-7000HC,4
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+<A name="ptwr_set_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<FONT COLOR=red><LI><A href='#par_twr_pref_0_0' Target='right'><FONT COLOR=red>FREQUENCY NET "ext_clk_c" 99.295000 MHz (884 errors)</FONT></A></LI>
+</FONT>            2323 items scored, 884 timing errors detected.
+Warning:  66.689MHz is the maximum frequency for this preference.
+
+<FONT COLOR=red><LI><A href='#par_twr_pref_0_1' Target='right'><FONT COLOR=red>FREQUENCY NET "pixel_tick" 61.323000 MHz (4096 errors)</FONT></A></LI>
+</FONT>            4096 items scored, 4096 timing errors detected.
+Warning:   3.934MHz is the maximum frequency for this preference.
+
+Report Type:     based on TRACE automatically generated preferences
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="par_twr_pref_0_0"></A>Preference: FREQUENCY NET "ext_clk_c" 99.295000 MHz ;
+            2323 items scored, 884 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 4.924ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i12  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i31  (to ext_clk_c +)
+
+   Delay:              14.829ns  (39.4% logic, 60.6% route), 21 logic levels.
+
+ Constraint Details:
+
+     14.829ns physical path delay memory_test_unit/SLICE_73 to memory_test_unit/SLICE_55 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.924ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_73 to memory_test_unit/SLICE_55:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C37C.CLK to     R14C37C.Q0 memory_test_unit/SLICE_73 (from ext_clk_c)
+ROUTE         8     2.741     R14C37C.Q0 to     R17C37D.B1 memory_test_unit/tmp3_3
+CTOF_DEL    ---     0.495     R17C37D.B1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162    R12C34A.FCI to    R12C34A.FCO memory_test_unit/SLICE_63
+ROUTE         1     0.000    R12C34A.FCO to    R12C34B.FCI memory_test_unit/n3196
+FCITOFCO_D  ---     0.162    R12C34B.FCI to    R12C34B.FCO memory_test_unit/SLICE_62
+ROUTE         1     0.000    R12C34B.FCO to    R12C34C.FCI memory_test_unit/n3197
+FCITOFCO_D  ---     0.162    R12C34C.FCI to    R12C34C.FCO memory_test_unit/SLICE_61
+ROUTE         1     0.000    R12C34C.FCO to    R12C34D.FCI memory_test_unit/n3198
+FCITOFCO_D  ---     0.162    R12C34D.FCI to    R12C34D.FCO memory_test_unit/SLICE_59
+ROUTE         1     0.000    R12C34D.FCO to    R12C35A.FCI memory_test_unit/n3199
+FCITOF0_DE  ---     0.585    R12C35A.FCI to     R12C35A.F0 memory_test_unit/SLICE_55
+ROUTE         1     0.000     R12C35A.F0 to    R12C35A.DI0 memory_test_unit/n134 (to ext_clk_c)
+                  --------
+                   14.829   (39.4% logic, 60.6% route), 21 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C37C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_55:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C35A.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Error: The following path exceeds requirements by 4.820ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i12  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i30  (to ext_clk_c +)
+
+   Delay:              14.725ns  (39.0% logic, 61.0% route), 20 logic levels.
+
+ Constraint Details:
+
+     14.725ns physical path delay memory_test_unit/SLICE_73 to memory_test_unit/SLICE_59 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.820ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_73 to memory_test_unit/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C37C.CLK to     R14C37C.Q0 memory_test_unit/SLICE_73 (from ext_clk_c)
+ROUTE         8     2.741     R14C37C.Q0 to     R17C37D.B1 memory_test_unit/tmp3_3
+CTOF_DEL    ---     0.495     R17C37D.B1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162    R12C34A.FCI to    R12C34A.FCO memory_test_unit/SLICE_63
+ROUTE         1     0.000    R12C34A.FCO to    R12C34B.FCI memory_test_unit/n3196
+FCITOFCO_D  ---     0.162    R12C34B.FCI to    R12C34B.FCO memory_test_unit/SLICE_62
+ROUTE         1     0.000    R12C34B.FCO to    R12C34C.FCI memory_test_unit/n3197
+FCITOFCO_D  ---     0.162    R12C34C.FCI to    R12C34C.FCO memory_test_unit/SLICE_61
+ROUTE         1     0.000    R12C34C.FCO to    R12C34D.FCI memory_test_unit/n3198
+FCITOF1_DE  ---     0.643    R12C34D.FCI to     R12C34D.F1 memory_test_unit/SLICE_59
+ROUTE         1     0.000     R12C34D.F1 to    R12C34D.DI1 memory_test_unit/n135 (to ext_clk_c)
+                  --------
+                   14.725   (39.0% logic, 61.0% route), 20 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C37C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C34D.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Error: The following path exceeds requirements by 4.762ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i12  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i29  (to ext_clk_c +)
+
+   Delay:              14.667ns  (38.7% logic, 61.3% route), 20 logic levels.
+
+ Constraint Details:
+
+     14.667ns physical path delay memory_test_unit/SLICE_73 to memory_test_unit/SLICE_59 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.762ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_73 to memory_test_unit/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C37C.CLK to     R14C37C.Q0 memory_test_unit/SLICE_73 (from ext_clk_c)
+ROUTE         8     2.741     R14C37C.Q0 to     R17C37D.B1 memory_test_unit/tmp3_3
+CTOF_DEL    ---     0.495     R17C37D.B1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162    R12C34A.FCI to    R12C34A.FCO memory_test_unit/SLICE_63
+ROUTE         1     0.000    R12C34A.FCO to    R12C34B.FCI memory_test_unit/n3196
+FCITOFCO_D  ---     0.162    R12C34B.FCI to    R12C34B.FCO memory_test_unit/SLICE_62
+ROUTE         1     0.000    R12C34B.FCO to    R12C34C.FCI memory_test_unit/n3197
+FCITOFCO_D  ---     0.162    R12C34C.FCI to    R12C34C.FCO memory_test_unit/SLICE_61
+ROUTE         1     0.000    R12C34C.FCO to    R12C34D.FCI memory_test_unit/n3198
+FCITOF0_DE  ---     0.585    R12C34D.FCI to     R12C34D.F0 memory_test_unit/SLICE_59
+ROUTE         1     0.000     R12C34D.F0 to    R12C34D.DI0 memory_test_unit/n136 (to ext_clk_c)
+                  --------
+                   14.667   (38.7% logic, 61.3% route), 20 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C37C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C34D.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Error: The following path exceeds requirements by 4.658ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i12  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i28  (to ext_clk_c +)
+
+   Delay:              14.563ns  (38.3% logic, 61.7% route), 19 logic levels.
+
+ Constraint Details:
+
+     14.563ns physical path delay memory_test_unit/SLICE_73 to memory_test_unit/SLICE_61 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.658ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_73 to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C37C.CLK to     R14C37C.Q0 memory_test_unit/SLICE_73 (from ext_clk_c)
+ROUTE         8     2.741     R14C37C.Q0 to     R17C37D.B1 memory_test_unit/tmp3_3
+CTOF_DEL    ---     0.495     R17C37D.B1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162    R12C34A.FCI to    R12C34A.FCO memory_test_unit/SLICE_63
+ROUTE         1     0.000    R12C34A.FCO to    R12C34B.FCI memory_test_unit/n3196
+FCITOFCO_D  ---     0.162    R12C34B.FCI to    R12C34B.FCO memory_test_unit/SLICE_62
+ROUTE         1     0.000    R12C34B.FCO to    R12C34C.FCI memory_test_unit/n3197
+FCITOF1_DE  ---     0.643    R12C34C.FCI to     R12C34C.F1 memory_test_unit/SLICE_61
+ROUTE         1     0.000     R12C34C.F1 to    R12C34C.DI1 memory_test_unit/n137 (to ext_clk_c)
+                  --------
+                   14.563   (38.3% logic, 61.7% route), 19 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C37C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C34C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Error: The following path exceeds requirements by 4.600ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i12  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i27  (to ext_clk_c +)
+
+   Delay:              14.505ns  (38.0% logic, 62.0% route), 19 logic levels.
+
+ Constraint Details:
+
+     14.505ns physical path delay memory_test_unit/SLICE_73 to memory_test_unit/SLICE_61 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.600ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_73 to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C37C.CLK to     R14C37C.Q0 memory_test_unit/SLICE_73 (from ext_clk_c)
+ROUTE         8     2.741     R14C37C.Q0 to     R17C37D.B1 memory_test_unit/tmp3_3
+CTOF_DEL    ---     0.495     R17C37D.B1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162    R12C34A.FCI to    R12C34A.FCO memory_test_unit/SLICE_63
+ROUTE         1     0.000    R12C34A.FCO to    R12C34B.FCI memory_test_unit/n3196
+FCITOFCO_D  ---     0.162    R12C34B.FCI to    R12C34B.FCO memory_test_unit/SLICE_62
+ROUTE         1     0.000    R12C34B.FCO to    R12C34C.FCI memory_test_unit/n3197
+FCITOF0_DE  ---     0.585    R12C34C.FCI to     R12C34C.F0 memory_test_unit/SLICE_61
+ROUTE         1     0.000     R12C34C.F0 to    R12C34C.DI0 memory_test_unit/n138 (to ext_clk_c)
+                  --------
+                   14.505   (38.0% logic, 62.0% route), 19 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C37C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C34C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Error: The following path exceeds requirements by 4.496ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i12  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i26  (to ext_clk_c +)
+
+   Delay:              14.401ns  (37.6% logic, 62.4% route), 18 logic levels.
+
+ Constraint Details:
+
+     14.401ns physical path delay memory_test_unit/SLICE_73 to memory_test_unit/SLICE_62 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.496ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_73 to memory_test_unit/SLICE_62:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C37C.CLK to     R14C37C.Q0 memory_test_unit/SLICE_73 (from ext_clk_c)
+ROUTE         8     2.741     R14C37C.Q0 to     R17C37D.B1 memory_test_unit/tmp3_3
+CTOF_DEL    ---     0.495     R17C37D.B1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162    R12C34A.FCI to    R12C34A.FCO memory_test_unit/SLICE_63
+ROUTE         1     0.000    R12C34A.FCO to    R12C34B.FCI memory_test_unit/n3196
+FCITOF1_DE  ---     0.643    R12C34B.FCI to     R12C34B.F1 memory_test_unit/SLICE_62
+ROUTE         1     0.000     R12C34B.F1 to    R12C34B.DI1 memory_test_unit/n139 (to ext_clk_c)
+                  --------
+                   14.401   (37.6% logic, 62.4% route), 18 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C37C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_62:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C34B.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Error: The following path exceeds requirements by 4.461ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i5  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i31  (to ext_clk_c +)
+
+   Delay:              14.366ns  (40.7% logic, 59.3% route), 21 logic levels.
+
+ Constraint Details:
+
+     14.366ns physical path delay memory_test_unit/SLICE_47 to memory_test_unit/SLICE_55 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.461ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_47 to memory_test_unit/SLICE_55:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C36C.CLK to     R14C36C.Q1 memory_test_unit/SLICE_47 (from ext_clk_c)
+ROUTE         6     2.278     R14C36C.Q1 to     R17C37D.A1 memory_test_unit/tmp4_0
+CTOF_DEL    ---     0.495     R17C37D.A1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162    R12C34A.FCI to    R12C34A.FCO memory_test_unit/SLICE_63
+ROUTE         1     0.000    R12C34A.FCO to    R12C34B.FCI memory_test_unit/n3196
+FCITOFCO_D  ---     0.162    R12C34B.FCI to    R12C34B.FCO memory_test_unit/SLICE_62
+ROUTE         1     0.000    R12C34B.FCO to    R12C34C.FCI memory_test_unit/n3197
+FCITOFCO_D  ---     0.162    R12C34C.FCI to    R12C34C.FCO memory_test_unit/SLICE_61
+ROUTE         1     0.000    R12C34C.FCO to    R12C34D.FCI memory_test_unit/n3198
+FCITOFCO_D  ---     0.162    R12C34D.FCI to    R12C34D.FCO memory_test_unit/SLICE_59
+ROUTE         1     0.000    R12C34D.FCO to    R12C35A.FCI memory_test_unit/n3199
+FCITOF0_DE  ---     0.585    R12C35A.FCI to     R12C35A.F0 memory_test_unit/SLICE_55
+ROUTE         1     0.000     R12C35A.F0 to    R12C35A.DI0 memory_test_unit/n134 (to ext_clk_c)
+                  --------
+                   14.366   (40.7% logic, 59.3% route), 21 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_47:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C36C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_55:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C35A.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Error: The following path exceeds requirements by 4.438ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i12  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i25  (to ext_clk_c +)
+
+   Delay:              14.343ns  (37.3% logic, 62.7% route), 18 logic levels.
+
+ Constraint Details:
+
+     14.343ns physical path delay memory_test_unit/SLICE_73 to memory_test_unit/SLICE_62 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.438ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_73 to memory_test_unit/SLICE_62:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C37C.CLK to     R14C37C.Q0 memory_test_unit/SLICE_73 (from ext_clk_c)
+ROUTE         8     2.741     R14C37C.Q0 to     R17C37D.B1 memory_test_unit/tmp3_3
+CTOF_DEL    ---     0.495     R17C37D.B1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162    R12C34A.FCI to    R12C34A.FCO memory_test_unit/SLICE_63
+ROUTE         1     0.000    R12C34A.FCO to    R12C34B.FCI memory_test_unit/n3196
+FCITOF0_DE  ---     0.585    R12C34B.FCI to     R12C34B.F0 memory_test_unit/SLICE_62
+ROUTE         1     0.000     R12C34B.F0 to    R12C34B.DI0 memory_test_unit/n140 (to ext_clk_c)
+                  --------
+                   14.343   (37.3% logic, 62.7% route), 18 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C37C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_62:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C34B.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Error: The following path exceeds requirements by 4.357ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i5  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i30  (to ext_clk_c +)
+
+   Delay:              14.262ns  (40.2% logic, 59.8% route), 20 logic levels.
+
+ Constraint Details:
+
+     14.262ns physical path delay memory_test_unit/SLICE_47 to memory_test_unit/SLICE_59 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.357ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_47 to memory_test_unit/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C36C.CLK to     R14C36C.Q1 memory_test_unit/SLICE_47 (from ext_clk_c)
+ROUTE         6     2.278     R14C36C.Q1 to     R17C37D.A1 memory_test_unit/tmp4_0
+CTOF_DEL    ---     0.495     R17C37D.A1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOFCO_D  ---     0.162    R12C34A.FCI to    R12C34A.FCO memory_test_unit/SLICE_63
+ROUTE         1     0.000    R12C34A.FCO to    R12C34B.FCI memory_test_unit/n3196
+FCITOFCO_D  ---     0.162    R12C34B.FCI to    R12C34B.FCO memory_test_unit/SLICE_62
+ROUTE         1     0.000    R12C34B.FCO to    R12C34C.FCI memory_test_unit/n3197
+FCITOFCO_D  ---     0.162    R12C34C.FCI to    R12C34C.FCO memory_test_unit/SLICE_61
+ROUTE         1     0.000    R12C34C.FCO to    R12C34D.FCI memory_test_unit/n3198
+FCITOF1_DE  ---     0.643    R12C34D.FCI to     R12C34D.F1 memory_test_unit/SLICE_59
+ROUTE         1     0.000     R12C34D.F1 to    R12C34D.DI1 memory_test_unit/n135 (to ext_clk_c)
+                  --------
+                   14.262   (40.2% logic, 59.8% route), 20 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_47:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C36C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C34D.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Error: The following path exceeds requirements by 4.334ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/address__292_293__i12  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i24  (to ext_clk_c +)
+
+   Delay:              14.239ns  (36.9% logic, 63.1% route), 17 logic levels.
+
+ Constraint Details:
+
+     14.239ns physical path delay memory_test_unit/SLICE_73 to memory_test_unit/SLICE_63 exceeds
+     10.071ns delay constraint less
+      0.000ns skew and
+      0.166ns DIN_SET requirement (totaling 9.905ns) by 4.334ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_73 to memory_test_unit/SLICE_63:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R14C37C.CLK to     R14C37C.Q0 memory_test_unit/SLICE_73 (from ext_clk_c)
+ROUTE         8     2.741     R14C37C.Q0 to     R17C37D.B1 memory_test_unit/tmp3_3
+CTOF_DEL    ---     0.495     R17C37D.B1 to     R17C37D.F1 memory_test_unit/SLICE_151
+ROUTE         1     1.838     R17C37D.F1 to     R17C37D.B0 memory_test_unit/n28
+CTOF_DEL    ---     0.495     R17C37D.B0 to     R17C37D.F0 memory_test_unit/SLICE_151
+ROUTE         1     1.854     R17C37D.F0 to     R25C37D.B0 memory_test_unit/n34
+CTOF_DEL    ---     0.495     R25C37D.B0 to     R25C37D.F0 memory_test_unit/SLICE_150
+ROUTE         2     2.555     R25C37D.F0 to     R12C31A.A1 memory_test_unit/n3000
+C1TOFCO_DE  ---     0.889     R12C31A.A1 to    R12C31A.FCO memory_test_unit/SLICE_64
+ROUTE         1     0.000    R12C31A.FCO to    R12C31B.FCI memory_test_unit/n3184
+FCITOFCO_D  ---     0.162    R12C31B.FCI to    R12C31B.FCO memory_test_unit/SLICE_60
+ROUTE         1     0.000    R12C31B.FCO to    R12C31C.FCI memory_test_unit/n3185
+FCITOFCO_D  ---     0.162    R12C31C.FCI to    R12C31C.FCO memory_test_unit/SLICE_58
+ROUTE         1     0.000    R12C31C.FCO to    R12C31D.FCI memory_test_unit/n3186
+FCITOFCO_D  ---     0.162    R12C31D.FCI to    R12C31D.FCO memory_test_unit/SLICE_57
+ROUTE         1     0.000    R12C31D.FCO to    R12C32A.FCI memory_test_unit/n3187
+FCITOFCO_D  ---     0.162    R12C32A.FCI to    R12C32A.FCO memory_test_unit/SLICE_56
+ROUTE         1     0.000    R12C32A.FCO to    R12C32B.FCI memory_test_unit/n3188
+FCITOFCO_D  ---     0.162    R12C32B.FCI to    R12C32B.FCO memory_test_unit/SLICE_54
+ROUTE         1     0.000    R12C32B.FCO to    R12C32C.FCI memory_test_unit/n3189
+FCITOFCO_D  ---     0.162    R12C32C.FCI to    R12C32C.FCO memory_test_unit/SLICE_51
+ROUTE         1     0.000    R12C32C.FCO to    R12C32D.FCI memory_test_unit/n3190
+FCITOFCO_D  ---     0.162    R12C32D.FCI to    R12C32D.FCO memory_test_unit/SLICE_50
+ROUTE         1     0.000    R12C32D.FCO to    R12C33A.FCI memory_test_unit/n3191
+FCITOFCO_D  ---     0.162    R12C33A.FCI to    R12C33A.FCO memory_test_unit/SLICE_48
+ROUTE         1     0.000    R12C33A.FCO to    R12C33B.FCI memory_test_unit/n3192
+FCITOFCO_D  ---     0.162    R12C33B.FCI to    R12C33B.FCO memory_test_unit/SLICE_69
+ROUTE         1     0.000    R12C33B.FCO to    R12C33C.FCI memory_test_unit/n3193
+FCITOFCO_D  ---     0.162    R12C33C.FCI to    R12C33C.FCO memory_test_unit/SLICE_66
+ROUTE         1     0.000    R12C33C.FCO to    R12C33D.FCI memory_test_unit/n3194
+FCITOFCO_D  ---     0.162    R12C33D.FCI to    R12C33D.FCO memory_test_unit/SLICE_65
+ROUTE         1     0.000    R12C33D.FCO to    R12C34A.FCI memory_test_unit/n3195
+FCITOF1_DE  ---     0.643    R12C34A.FCI to     R12C34A.F1 memory_test_unit/SLICE_63
+ROUTE         1     0.000     R12C34A.F1 to    R12C34A.DI1 memory_test_unit/n141 (to ext_clk_c)
+                  --------
+                   14.239   (36.9% logic, 63.1% route), 17 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R14C37C.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_63:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     2.428       49.PADDI to    R12C34A.CLK ext_clk_c
+                  --------
+                    2.428   (0.0% logic, 100.0% route), 0 logic levels.
+
+Warning:  66.689MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="par_twr_pref_0_1"></A>Preference: FREQUENCY NET "pixel_tick" 61.323000 MHz ;
+            4096 items scored, 4096 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 14.108ns (weighted slack = -237.910ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i2  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.426ns  (48.7% logic, 51.3% route), 21 logic levels.
+
+ Constraint Details:
+
+     19.426ns physical path delay vga_sync_unit/SLICE_2 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 14.108ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_2 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C38B.CLK to     R15C38B.Q0 vga_sync_unit/SLICE_2 (from ext_clk_c)
+ROUTE         4     1.396     R15C38B.Q0 to     R16C38A.A1 pixel_x_1
+C1TOFCO_DE  ---     0.889     R16C38A.A1 to    R16C38A.FCO textElement1/SLICE_46
+ROUTE         1     0.000    R16C38A.FCO to    R16C38B.FCI textElement1/n3220
+FCITOFCO_D  ---     0.162    R16C38B.FCI to    R16C38B.FCO textElement1/SLICE_45
+ROUTE         1     0.000    R16C38B.FCO to    R16C38C.FCI textElement1/n3221
+FCITOFCO_D  ---     0.162    R16C38C.FCI to    R16C38C.FCO textElement1/SLICE_44
+ROUTE         1     0.000    R16C38C.FCO to    R16C38D.FCI textElement1/n3222
+FCITOFCO_D  ---     0.162    R16C38D.FCI to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.667     R18C40D.F0 to     R18C39A.D0 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39A.D0 to   R18C39A.OFX0 textElement1/i1707/SLICE_111
+ROUTE         1     0.000   R18C39A.OFX0 to    R18C39A.FXB textElement1/n3519
+FXTOOFX_DE  ---     0.241    R18C39A.FXB to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.426   (48.7% logic, 51.3% route), 21 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_2:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C38B.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 14.108ns (weighted slack = -237.910ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i2  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.426ns  (48.7% logic, 51.3% route), 21 logic levels.
+
+ Constraint Details:
+
+     19.426ns physical path delay vga_sync_unit/SLICE_2 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 14.108ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_2 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C38B.CLK to     R15C38B.Q0 vga_sync_unit/SLICE_2 (from ext_clk_c)
+ROUTE         4     1.396     R15C38B.Q0 to     R16C38A.A1 pixel_x_1
+C1TOFCO_DE  ---     0.889     R16C38A.A1 to    R16C38A.FCO textElement1/SLICE_46
+ROUTE         1     0.000    R16C38A.FCO to    R16C38B.FCI textElement1/n3220
+FCITOFCO_D  ---     0.162    R16C38B.FCI to    R16C38B.FCO textElement1/SLICE_45
+ROUTE         1     0.000    R16C38B.FCO to    R16C38C.FCI textElement1/n3221
+FCITOFCO_D  ---     0.162    R16C38C.FCI to    R16C38C.FCO textElement1/SLICE_44
+ROUTE         1     0.000    R16C38C.FCO to    R16C38D.FCI textElement1/n3222
+FCITOFCO_D  ---     0.162    R16C38D.FCI to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.667     R18C40D.F0 to     R18C39A.D1 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39A.D1 to   R18C39A.OFX0 textElement1/i1707/SLICE_111
+ROUTE         1     0.000   R18C39A.OFX0 to    R18C39A.FXB textElement1/n3519
+FXTOOFX_DE  ---     0.241    R18C39A.FXB to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.426   (48.7% logic, 51.3% route), 21 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_2:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C38B.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 14.087ns (weighted slack = -237.556ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i2  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.405ns  (48.7% logic, 51.3% route), 21 logic levels.
+
+ Constraint Details:
+
+     19.405ns physical path delay vga_sync_unit/SLICE_2 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 14.087ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_2 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C38B.CLK to     R15C38B.Q0 vga_sync_unit/SLICE_2 (from ext_clk_c)
+ROUTE         4     1.396     R15C38B.Q0 to     R16C38A.A1 pixel_x_1
+C1TOFCO_DE  ---     0.889     R16C38A.A1 to    R16C38A.FCO textElement1/SLICE_46
+ROUTE         1     0.000    R16C38A.FCO to    R16C38B.FCI textElement1/n3220
+FCITOFCO_D  ---     0.162    R16C38B.FCI to    R16C38B.FCO textElement1/SLICE_45
+ROUTE         1     0.000    R16C38B.FCO to    R16C38C.FCI textElement1/n3221
+FCITOFCO_D  ---     0.162    R16C38C.FCI to    R16C38C.FCO textElement1/SLICE_44
+ROUTE         1     0.000    R16C38C.FCO to    R16C38D.FCI textElement1/n3222
+FCITOFCO_D  ---     0.162    R16C38D.FCI to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.646     R18C40D.F0 to     R18C39B.D0 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39B.D0 to   R18C39B.OFX0 textElement1/i1706/SLICE_110
+ROUTE         1     0.000   R18C39B.OFX0 to    R18C39A.FXA textElement1/n3518
+FXTOOFX_DE  ---     0.241    R18C39A.FXA to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.405   (48.7% logic, 51.3% route), 21 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_2:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C38B.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 14.087ns (weighted slack = -237.556ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i2  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.405ns  (48.7% logic, 51.3% route), 21 logic levels.
+
+ Constraint Details:
+
+     19.405ns physical path delay vga_sync_unit/SLICE_2 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 14.087ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_2 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C38B.CLK to     R15C38B.Q0 vga_sync_unit/SLICE_2 (from ext_clk_c)
+ROUTE         4     1.396     R15C38B.Q0 to     R16C38A.A1 pixel_x_1
+C1TOFCO_DE  ---     0.889     R16C38A.A1 to    R16C38A.FCO textElement1/SLICE_46
+ROUTE         1     0.000    R16C38A.FCO to    R16C38B.FCI textElement1/n3220
+FCITOFCO_D  ---     0.162    R16C38B.FCI to    R16C38B.FCO textElement1/SLICE_45
+ROUTE         1     0.000    R16C38B.FCO to    R16C38C.FCI textElement1/n3221
+FCITOFCO_D  ---     0.162    R16C38C.FCI to    R16C38C.FCO textElement1/SLICE_44
+ROUTE         1     0.000    R16C38C.FCO to    R16C38D.FCI textElement1/n3222
+FCITOFCO_D  ---     0.162    R16C38D.FCI to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.646     R18C40D.F0 to     R18C39B.D1 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39B.D1 to   R18C39B.OFX0 textElement1/i1706/SLICE_110
+ROUTE         1     0.000   R18C39B.OFX0 to    R18C39A.FXA textElement1/n3518
+FXTOOFX_DE  ---     0.241    R18C39A.FXA to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.405   (48.7% logic, 51.3% route), 21 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_2:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C38B.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 14.049ns (weighted slack = -236.915ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i8  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.367ns  (46.3% logic, 53.7% route), 18 logic levels.
+
+ Constraint Details:
+
+     19.367ns physical path delay vga_sync_unit/SLICE_10 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 14.049ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_10 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C39A.CLK to     R15C39A.Q0 vga_sync_unit/SLICE_10 (from ext_clk_c)
+ROUTE         6     1.823     R15C39A.Q0 to     R16C38D.A1 pixel_x_7
+C1TOFCO_DE  ---     0.889     R16C38D.A1 to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.667     R18C40D.F0 to     R18C39A.D0 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39A.D0 to   R18C39A.OFX0 textElement1/i1707/SLICE_111
+ROUTE         1     0.000   R18C39A.OFX0 to    R18C39A.FXB textElement1/n3519
+FXTOOFX_DE  ---     0.241    R18C39A.FXB to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.367   (46.3% logic, 53.7% route), 18 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_10:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C39A.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 14.049ns (weighted slack = -236.915ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i8  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.367ns  (46.3% logic, 53.7% route), 18 logic levels.
+
+ Constraint Details:
+
+     19.367ns physical path delay vga_sync_unit/SLICE_10 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 14.049ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_10 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C39A.CLK to     R15C39A.Q0 vga_sync_unit/SLICE_10 (from ext_clk_c)
+ROUTE         6     1.823     R15C39A.Q0 to     R16C38D.A1 pixel_x_7
+C1TOFCO_DE  ---     0.889     R16C38D.A1 to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.667     R18C40D.F0 to     R18C39A.D1 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39A.D1 to   R18C39A.OFX0 textElement1/i1707/SLICE_111
+ROUTE         1     0.000   R18C39A.OFX0 to    R18C39A.FXB textElement1/n3519
+FXTOOFX_DE  ---     0.241    R18C39A.FXB to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.367   (46.3% logic, 53.7% route), 18 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_10:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C39A.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 14.028ns (weighted slack = -236.561ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i8  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.346ns  (46.4% logic, 53.6% route), 18 logic levels.
+
+ Constraint Details:
+
+     19.346ns physical path delay vga_sync_unit/SLICE_10 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 14.028ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_10 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C39A.CLK to     R15C39A.Q0 vga_sync_unit/SLICE_10 (from ext_clk_c)
+ROUTE         6     1.823     R15C39A.Q0 to     R16C38D.A1 pixel_x_7
+C1TOFCO_DE  ---     0.889     R16C38D.A1 to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.646     R18C40D.F0 to     R18C39B.D0 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39B.D0 to   R18C39B.OFX0 textElement1/i1706/SLICE_110
+ROUTE         1     0.000   R18C39B.OFX0 to    R18C39A.FXA textElement1/n3518
+FXTOOFX_DE  ---     0.241    R18C39A.FXA to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.346   (46.4% logic, 53.6% route), 18 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_10:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C39A.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 14.028ns (weighted slack = -236.561ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i8  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.346ns  (46.4% logic, 53.6% route), 18 logic levels.
+
+ Constraint Details:
+
+     19.346ns physical path delay vga_sync_unit/SLICE_10 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 14.028ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_10 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C39A.CLK to     R15C39A.Q0 vga_sync_unit/SLICE_10 (from ext_clk_c)
+ROUTE         6     1.823     R15C39A.Q0 to     R16C38D.A1 pixel_x_7
+C1TOFCO_DE  ---     0.889     R16C38D.A1 to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.646     R18C40D.F0 to     R18C39B.D1 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39B.D1 to   R18C39B.OFX0 textElement1/i1706/SLICE_110
+ROUTE         1     0.000   R18C39B.OFX0 to    R18C39A.FXA textElement1/n3518
+FXTOOFX_DE  ---     0.241    R18C39A.FXA to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.346   (46.4% logic, 53.6% route), 18 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_10:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C39A.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 13.946ns (weighted slack = -235.178ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i4  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.264ns  (48.3% logic, 51.7% route), 20 logic levels.
+
+ Constraint Details:
+
+     19.264ns physical path delay vga_sync_unit/SLICE_1 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 13.946ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_1 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C38C.CLK to     R15C38C.Q0 vga_sync_unit/SLICE_1 (from ext_clk_c)
+ROUTE         4     1.396     R15C38C.Q0 to     R16C38B.A1 pixel_x_3
+C1TOFCO_DE  ---     0.889     R16C38B.A1 to    R16C38B.FCO textElement1/SLICE_45
+ROUTE         1     0.000    R16C38B.FCO to    R16C38C.FCI textElement1/n3221
+FCITOFCO_D  ---     0.162    R16C38C.FCI to    R16C38C.FCO textElement1/SLICE_44
+ROUTE         1     0.000    R16C38C.FCO to    R16C38D.FCI textElement1/n3222
+FCITOFCO_D  ---     0.162    R16C38D.FCI to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.667     R18C40D.F0 to     R18C39A.D0 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39A.D0 to   R18C39A.OFX0 textElement1/i1707/SLICE_111
+ROUTE         1     0.000   R18C39A.OFX0 to    R18C39A.FXB textElement1/n3519
+FXTOOFX_DE  ---     0.241    R18C39A.FXB to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.264   (48.3% logic, 51.7% route), 20 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_1:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C38C.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 13.946ns (weighted slack = -235.178ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/h_count_reg_240__i4  (from ext_clk_c +)
+   Destination:    FF         Data in        textElement1/pixel_44  (to pixel_tick +)
+
+   Delay:              19.264ns  (48.3% logic, 51.7% route), 20 logic levels.
+
+ Constraint Details:
+
+     19.264ns physical path delay vga_sync_unit/SLICE_1 to textElement1/SLICE_84 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.967ns delay constraint less
+     -4.625ns skew and
+      0.274ns LSR_SET requirement (totaling 5.318ns) by 13.946ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_1 to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R15C38C.CLK to     R15C38C.Q0 vga_sync_unit/SLICE_1 (from ext_clk_c)
+ROUTE         4     1.396     R15C38C.Q0 to     R16C38B.A1 pixel_x_3
+C1TOFCO_DE  ---     0.889     R16C38B.A1 to    R16C38B.FCO textElement1/SLICE_45
+ROUTE         1     0.000    R16C38B.FCO to    R16C38C.FCI textElement1/n3221
+FCITOFCO_D  ---     0.162    R16C38C.FCI to    R16C38C.FCO textElement1/SLICE_44
+ROUTE         1     0.000    R16C38C.FCO to    R16C38D.FCI textElement1/n3222
+FCITOFCO_D  ---     0.162    R16C38D.FCI to    R16C38D.FCO textElement1/SLICE_43
+ROUTE         1     0.000    R16C38D.FCO to    R16C39A.FCI textElement1/n3223
+FCITOFCO_D  ---     0.162    R16C39A.FCI to    R16C39A.FCO textElement1/SLICE_42
+ROUTE         1     0.000    R16C39A.FCO to    R16C39B.FCI textElement1/n3224
+FCITOF1_DE  ---     0.643    R16C39B.FCI to     R16C39B.F1 textElement1/SLICE_41
+ROUTE         1     0.744     R16C39B.F1 to     R16C40A.C0 textElement1/n1416
+CTOF_DEL    ---     0.495     R16C40A.C0 to     R16C40A.F0 textElement1/SLICE_140
+ROUTE        19     1.050     R16C40A.F0 to     R15C39C.D1 textElement1/n180
+CTOF_DEL    ---     0.495     R15C39C.D1 to     R15C39C.F1 textElement1/SLICE_103
+ROUTE        27     1.068     R15C39C.F1 to     R17C40D.D0 n3682
+CTOF_DEL    ---     0.495     R17C40D.D0 to     R17C40D.F0 textElement1/SLICE_136
+ROUTE         1     0.958     R17C40D.F0 to     R17C37A.D1 displayText_14_0
+CTOF_DEL    ---     0.495     R17C37A.D1 to     R17C37A.F1 SLICE_129
+ROUTE         1     0.693     R17C37A.F1 to     R17C37A.B0 n11
+CTOF_DEL    ---     0.495     R17C37A.B0 to     R17C37A.F0 SLICE_129
+ROUTE         1     0.623     R17C37A.F0 to     R17C38B.D1 textElement1/n2583
+CTOOFX_DEL  ---     0.721     R17C38B.D1 to   R17C38B.OFX0 textElement1/i1719/SLICE_112
+ROUTE         1     0.000   R17C38B.OFX0 to    R17C38A.FXA textElement1/n3531
+FXTOOFX_DE  ---     0.241    R17C38A.FXA to   R17C38A.OFX1 textElement1/i1720/SLICE_125
+ROUTE         2     1.350   R17C38A.OFX1 to     R18C40A.B0 textElement1/fontAddress_31_N_236_0
+C0TOFCO_DE  ---     1.023     R18C40A.B0 to    R18C40A.FCO SLICE_19
+ROUTE         1     0.000    R18C40A.FCO to    R18C40B.FCI textElement1/n3166
+FCITOFCO_D  ---     0.162    R18C40B.FCI to    R18C40B.FCO SLICE_15
+ROUTE         1     0.000    R18C40B.FCO to    R18C40C.FCI textElement1/n3167
+FCITOFCO_D  ---     0.162    R18C40C.FCI to    R18C40C.FCO SLICE_12
+ROUTE         1     0.000    R18C40C.FCO to    R18C40D.FCI textElement1/n3168
+FCITOF0_DE  ---     0.585    R18C40D.FCI to     R18C40D.F0 SLICE_39
+ROUTE         5     0.667     R18C40D.F0 to     R18C39A.D1 textElement1/fontAddress_10
+CTOOFX_DEL  ---     0.721     R18C39A.D1 to   R18C39A.OFX0 textElement1/i1707/SLICE_111
+ROUTE         1     0.000   R18C39A.OFX0 to    R18C39A.FXB textElement1/n3519
+FXTOOFX_DE  ---     0.241    R18C39A.FXB to   R18C39A.OFX1 textElement1/i1707/SLICE_111
+ROUTE         1     0.766   R18C39A.OFX1 to     R18C37B.C1 textElement1/n3522
+CTOF_DEL    ---     0.495     R18C37B.C1 to     R18C37B.F1 textElement1/SLICE_165
+ROUTE         1     0.653     R18C37B.F1 to    R18C37A.LSR textElement1/pixel_N_282 (to pixel_tick)
+                  --------
+                   19.264   (48.3% logic, 51.7% route), 20 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_1:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.428       49.PADDI to    R15C38C.CLK ext_clk_c
+                  --------
+                    3.800   (36.1% logic, 63.9% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372         49.PAD to       49.PADDI ext_clk
+ROUTE        63     2.391       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.452    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     4.210     R25C36C.Q0 to    R18C37A.CLK pixel_tick
+                  --------
+                    8.425   (21.6% logic, 78.4% route), 2 logic levels.
+
+Warning:   3.934MHz is the maximum frequency for this preference.
+
+<A name="ptwr_set_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "ext_clk_c" 99.295000 MHz |             |             |
+;                                       |   99.295 MHz|   66.689 MHz|  21 *
+                                        |             |             |
+FREQUENCY NET "pixel_tick" 61.323000    |             |             |
+MHz ;                                   |   61.323 MHz|    3.934 MHz|  21 *
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+2 preferences(marked by "*" above) not met.
+
+----------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+----------------------------------------------------------------------------
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/fontAddress_10">textElement1/fontAddress_10</a>             |       5|    3806|     76.43%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/pixel_N_282">textElement1/pixel_N_282</a>                |       1|    3806|     76.43%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3168">textElement1/n3168</a>                      |       1|    3702|     74.34%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n180">textElement1/n180</a>                       |      19|    3554|     71.37%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3167">textElement1/n3167</a>                      |       1|    3243|     65.12%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3522">textElement1/n3522</a>                      |       1|    3202|     64.30%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3224">textElement1/n3224</a>                      |       1|    2907|     58.37%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n1416">textElement1/n1416</a>                      |       1|    2907|     58.37%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3166">textElement1/n3166</a>                      |       1|    2424|     48.67%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3223">textElement1/n3223</a>                      |       1|    2405|     48.29%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3222">textElement1/n3222</a>                      |       1|    1688|     33.90%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3519">textElement1/n3519</a>                      |       1|    1612|     32.37%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3518">textElement1/n3518</a>                      |       1|    1590|     31.93%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/fontAddress_31_N_236_0">textElement1/fontAddress_31_N_236_0</a>     |       2|    1479|     29.70%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=n3682">n3682</a>                                   |      27|    1359|     27.29%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3221">textElement1/n3221</a>                      |       1|    1222|     24.54%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3531">textElement1/n3531</a>                      |       1|    1145|     22.99%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=pixel_x_1">pixel_x_1</a>                               |       4|     989|     19.86%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/fontAddress_31_N_236_1">textElement1/fontAddress_31_N_236_1</a>     |       1|     971|     19.50%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3220">textElement1/n3220</a>                      |       1|     855|     17.17%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3683">textElement1/n3683</a>                      |       6|     778|     15.62%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3616">textElement1/n3616</a>                      |       1|     604|     12.13%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3681">textElement1/n3681</a>                      |      20|     584|     11.73%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3675">textElement1/n3675</a>                      |      11|     567|     11.39%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=memory_test_unit/n3000">memory_test_unit/n3000</a>                  |       2|     553|     11.10%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n2583">textElement1/n2583</a>                      |       1|     538|     10.80%
+                                        |        |        |
+----------------------------------------------------------------------------
+
+
+<A name="ptwr_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 2 clocks:
+
+Clock Domain: ext_clk_c   Source: ext_clk.PAD   Loads: 63
+   Covered under: FREQUENCY NET "ext_clk_c" 99.295000 MHz ;
+
+Clock Domain: pixel_tick   Source: vga_sync_unit/SLICE_82.Q0   Loads: 11
+   Covered under: FREQUENCY NET "pixel_tick" 61.323000 MHz ;
+
+   Data transfers from:
+   Clock Domain: ext_clk_c   Source: ext_clk.PAD
+      Covered under: FREQUENCY NET "pixel_tick" 61.323000 MHz ;   Transfers: 48
+
+
+<A name="ptwr_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
+---------------
+
+Timing errors: 4980  Score: 764139530
+Cumulative negative slack: 764139530
+
+Constraints cover 36875 paths, 6 nets, and 1022 connections (94.63% coverage)
+
+--------------------------------------------------------------------------------
+<A name="Par_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.9.1.119</big></U></B>
+Tue Nov 21 22:58:15 2017
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="ptwr_hold_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 4 -sphld m -o memory_tst_impl1.twr -gui memory_tst_impl1.ncd memory_tst_impl1.prf 
+Design file:     memory_tst_impl1.ncd
+Preference file: memory_tst_impl1.prf
+Device,speed:    LCMXO2-7000HC,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+<A name="ptwr_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#par_twr_pref_1_0' Target='right'>FREQUENCY NET "ext_clk_c" 99.295000 MHz (0 errors)</A></LI>            2323 items scored, 0 timing errors detected.
+
+<FONT COLOR=red><LI><A href='#par_twr_pref_1_1' Target='right'><FONT COLOR=red>FREQUENCY NET "pixel_tick" 61.323000 MHz (84 errors)</FONT></A></LI>
+</FONT>            4096 items scored, 84 timing errors detected.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="par_twr_pref_1_0"></A>Preference: FREQUENCY NET "ext_clk_c" 99.295000 MHz ;
+            2323 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i19  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i19  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_66 to memory_test_unit/SLICE_66 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_66 to memory_test_unit/SLICE_66:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C33C.CLK to     R12C33C.Q0 memory_test_unit/SLICE_66 (from ext_clk_c)
+ROUTE         1     0.130     R12C33C.Q0 to     R12C33C.A0 memory_test_unit/n13
+CTOF_DEL    ---     0.101     R12C33C.A0 to     R12C33C.F0 memory_test_unit/SLICE_66
+ROUTE         1     0.000     R12C33C.F0 to    R12C33C.DI0 memory_test_unit/n146 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_66:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C33C.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_66:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C33C.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i15  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i15  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_48 to memory_test_unit/SLICE_48 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_48 to memory_test_unit/SLICE_48:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C33A.CLK to     R12C33A.Q0 memory_test_unit/SLICE_48 (from ext_clk_c)
+ROUTE         1     0.130     R12C33A.Q0 to     R12C33A.A0 memory_test_unit/n17
+CTOF_DEL    ---     0.101     R12C33A.A0 to     R12C33A.F0 memory_test_unit/SLICE_48
+ROUTE         1     0.000     R12C33A.F0 to    R12C33A.DI0 memory_test_unit/n150 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_48:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C33A.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_48:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C33A.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i23  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i23  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_63 to memory_test_unit/SLICE_63 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_63 to memory_test_unit/SLICE_63:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C34A.CLK to     R12C34A.Q0 memory_test_unit/SLICE_63 (from ext_clk_c)
+ROUTE         1     0.130     R12C34A.Q0 to     R12C34A.A0 memory_test_unit/n9
+CTOF_DEL    ---     0.101     R12C34A.A0 to     R12C34A.F0 memory_test_unit/SLICE_63
+ROUTE         1     0.000     R12C34A.F0 to    R12C34A.DI0 memory_test_unit/n142 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_63:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34A.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_63:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34A.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i27  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i27  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_61 to memory_test_unit/SLICE_61 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_61 to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C34C.CLK to     R12C34C.Q0 memory_test_unit/SLICE_61 (from ext_clk_c)
+ROUTE         1     0.130     R12C34C.Q0 to     R12C34C.A0 memory_test_unit/n5
+CTOF_DEL    ---     0.101     R12C34C.A0 to     R12C34C.F0 memory_test_unit/SLICE_61
+ROUTE         1     0.000     R12C34C.F0 to    R12C34C.DI0 memory_test_unit/n138 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34C.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34C.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i21  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i21  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_65 to memory_test_unit/SLICE_65 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_65 to memory_test_unit/SLICE_65:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C33D.CLK to     R12C33D.Q0 memory_test_unit/SLICE_65 (from ext_clk_c)
+ROUTE         1     0.130     R12C33D.Q0 to     R12C33D.A0 memory_test_unit/n11
+CTOF_DEL    ---     0.101     R12C33D.A0 to     R12C33D.F0 memory_test_unit/SLICE_65
+ROUTE         1     0.000     R12C33D.F0 to    R12C33D.DI0 memory_test_unit/n144 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_65:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C33D.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_65:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C33D.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i9  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i9  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_54 to memory_test_unit/SLICE_54 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_54 to memory_test_unit/SLICE_54:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C32B.CLK to     R12C32B.Q0 memory_test_unit/SLICE_54 (from ext_clk_c)
+ROUTE         1     0.130     R12C32B.Q0 to     R12C32B.A0 memory_test_unit/n23
+CTOF_DEL    ---     0.101     R12C32B.A0 to     R12C32B.F0 memory_test_unit/SLICE_54
+ROUTE         1     0.000     R12C32B.F0 to    R12C32B.DI0 memory_test_unit/n156 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_54:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C32B.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_54:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C32B.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i29  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i29  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_59 to memory_test_unit/SLICE_59 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_59 to memory_test_unit/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C34D.CLK to     R12C34D.Q0 memory_test_unit/SLICE_59 (from ext_clk_c)
+ROUTE         1     0.130     R12C34D.Q0 to     R12C34D.A0 memory_test_unit/n3
+CTOF_DEL    ---     0.101     R12C34D.A0 to     R12C34D.F0 memory_test_unit/SLICE_59
+ROUTE         1     0.000     R12C34D.F0 to    R12C34D.DI0 memory_test_unit/n136 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34D.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34D.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i25  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i25  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_62 to memory_test_unit/SLICE_62 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_62 to memory_test_unit/SLICE_62:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C34B.CLK to     R12C34B.Q0 memory_test_unit/SLICE_62 (from ext_clk_c)
+ROUTE         1     0.130     R12C34B.Q0 to     R12C34B.A0 memory_test_unit/n7
+CTOF_DEL    ---     0.101     R12C34B.A0 to     R12C34B.F0 memory_test_unit/SLICE_62
+ROUTE         1     0.000     R12C34B.F0 to    R12C34B.DI0 memory_test_unit/n140 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_62:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34B.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_62:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34B.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i28  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i28  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_61 to memory_test_unit/SLICE_61 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_61 to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C34C.CLK to     R12C34C.Q1 memory_test_unit/SLICE_61 (from ext_clk_c)
+ROUTE         1     0.130     R12C34C.Q1 to     R12C34C.A1 memory_test_unit/n4
+CTOF_DEL    ---     0.101     R12C34C.A1 to     R12C34C.F1 memory_test_unit/SLICE_61
+ROUTE         1     0.000     R12C34C.F1 to    R12C34C.DI1 memory_test_unit/n137 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34C.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C34C.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              memory_test_unit/data_239__i13  (from ext_clk_c +)
+   Destination:    FF         Data in        memory_test_unit/data_239__i13  (to ext_clk_c +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay memory_test_unit/SLICE_50 to memory_test_unit/SLICE_50 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path memory_test_unit/SLICE_50 to memory_test_unit/SLICE_50:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C32D.CLK to     R12C32D.Q0 memory_test_unit/SLICE_50 (from ext_clk_c)
+ROUTE         1     0.130     R12C32D.Q0 to     R12C32D.A0 memory_test_unit/n19
+CTOF_DEL    ---     0.101     R12C32D.A0 to     R12C32D.F0 memory_test_unit/SLICE_50
+ROUTE         1     0.000     R12C32D.F0 to    R12C32D.DI0 memory_test_unit/n152 (to ext_clk_c)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to memory_test_unit/SLICE_50:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C32D.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path ext_clk to memory_test_unit/SLICE_50:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        63     0.880       49.PADDI to    R12C32D.CLK ext_clk_c
+                  --------
+                    0.880   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+================================================================================
+<A name="par_twr_pref_1_1"></A>Preference: FREQUENCY NET "pixel_tick" 61.323000 MHz ;
+            4096 items scored, 84 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 1.036ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i1  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_81(ASIC)  (to pixel_tick +)
+
+   Delay:               0.571ns  (23.3% logic, 76.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.571ns physical path delay vga_sync_unit/SLICE_0 to textElement1/fontRom/mux_81 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 1.036ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_0 to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34A.CLK to     R22C34A.Q1 vga_sync_unit/SLICE_0 (from ext_clk_c)
+ROUTE         4     0.438     R22C34A.Q1 to EBR_R20C39.AD3 fontAddress_0 (to pixel_tick)
+                  --------
+                    0.571   (23.3% logic, 76.7% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34A.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C39.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 1.036ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i1  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_82(ASIC)  (to pixel_tick +)
+
+   Delay:               0.571ns  (23.3% logic, 76.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.571ns physical path delay vga_sync_unit/SLICE_0 to textElement1/fontRom/mux_82 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 1.036ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_0 to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34A.CLK to     R22C34A.Q1 vga_sync_unit/SLICE_0 (from ext_clk_c)
+ROUTE         4     0.438     R22C34A.Q1 to EBR_R20C36.AD3 fontAddress_0 (to pixel_tick)
+                  --------
+                    0.571   (23.3% logic, 76.7% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34A.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C36.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 0.701ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i2  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_82(ASIC)  (to pixel_tick +)
+
+   Delay:               0.906ns  (25.8% logic, 74.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.906ns physical path delay vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_82 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 0.701ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34B.CLK to     R22C34B.Q0 vga_sync_unit/SLICE_8 (from ext_clk_c)
+ROUTE         5     0.214     R22C34B.Q0 to     R21C34A.A1 pixel_y_1
+CTOF_DEL    ---     0.101     R21C34A.A1 to     R21C34A.F1 textElement1/SLICE_36
+ROUTE         2     0.458     R21C34A.F1 to EBR_R20C36.AD4 textElement1/fontAddress_1 (to pixel_tick)
+                  --------
+                    0.906   (25.8% logic, 74.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_8:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34B.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C36.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 0.701ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i2  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_81(ASIC)  (to pixel_tick +)
+
+   Delay:               0.906ns  (25.8% logic, 74.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.906ns physical path delay vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_81 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 0.701ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34B.CLK to     R22C34B.Q0 vga_sync_unit/SLICE_8 (from ext_clk_c)
+ROUTE         5     0.214     R22C34B.Q0 to     R21C34A.A1 pixel_y_1
+CTOF_DEL    ---     0.101     R21C34A.A1 to     R21C34A.F1 textElement1/SLICE_36
+ROUTE         2     0.458     R21C34A.F1 to EBR_R20C39.AD4 textElement1/fontAddress_1 (to pixel_tick)
+                  --------
+                    0.906   (25.8% logic, 74.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_8:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34B.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C39.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 0.688ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i3  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_82(ASIC)  (to pixel_tick +)
+
+   Delay:               0.919ns  (25.5% logic, 74.5% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.919ns physical path delay vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_82 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 0.688ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34B.CLK to     R22C34B.Q1 vga_sync_unit/SLICE_8 (from ext_clk_c)
+ROUTE         5     0.227     R22C34B.Q1 to     R21C34B.B0 pixel_y_2
+CTOF_DEL    ---     0.101     R21C34B.B0 to     R21C34B.F0 textElement1/SLICE_35
+ROUTE         2     0.458     R21C34B.F0 to EBR_R20C36.AD5 textElement1/fontAddress_2 (to pixel_tick)
+                  --------
+                    0.919   (25.5% logic, 74.5% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_8:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34B.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C36.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 0.688ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i3  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_81(ASIC)  (to pixel_tick +)
+
+   Delay:               0.919ns  (25.5% logic, 74.5% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.919ns physical path delay vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_81 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 0.688ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34B.CLK to     R22C34B.Q1 vga_sync_unit/SLICE_8 (from ext_clk_c)
+ROUTE         5     0.227     R22C34B.Q1 to     R21C34B.B0 pixel_y_2
+CTOF_DEL    ---     0.101     R21C34B.B0 to     R21C34B.F0 textElement1/SLICE_35
+ROUTE         2     0.458     R21C34B.F0 to EBR_R20C39.AD5 textElement1/fontAddress_2 (to pixel_tick)
+                  --------
+                    0.919   (25.5% logic, 74.5% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_8:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34B.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C39.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 0.588ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i3  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_81(ASIC)  (to pixel_tick +)
+
+   Delay:               1.019ns  (35.1% logic, 64.9% route), 2 logic levels.
+
+ Constraint Details:
+
+      1.019ns physical path delay vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_81 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 0.588ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34B.CLK to     R22C34B.Q1 vga_sync_unit/SLICE_8 (from ext_clk_c)
+ROUTE         5     0.227     R22C34B.Q1 to     R21C34B.B0 pixel_y_2
+CTOF1_DEL   ---     0.225     R21C34B.B0 to     R21C34B.F1 textElement1/SLICE_35
+ROUTE         2     0.434     R21C34B.F1 to EBR_R20C39.AD6 textElement1/fontAddress_3 (to pixel_tick)
+                  --------
+                    1.019   (35.1% logic, 64.9% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_8:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34B.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C39.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 0.588ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i3  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_82(ASIC)  (to pixel_tick +)
+
+   Delay:               1.019ns  (35.1% logic, 64.9% route), 2 logic levels.
+
+ Constraint Details:
+
+      1.019ns physical path delay vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_82 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 0.588ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_8 to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34B.CLK to     R22C34B.Q1 vga_sync_unit/SLICE_8 (from ext_clk_c)
+ROUTE         5     0.227     R22C34B.Q1 to     R21C34B.B0 pixel_y_2
+CTOF1_DEL   ---     0.225     R21C34B.B0 to     R21C34B.F1 textElement1/SLICE_35
+ROUTE         2     0.434     R21C34B.F1 to EBR_R20C36.AD6 textElement1/fontAddress_3 (to pixel_tick)
+                  --------
+                    1.019   (35.1% logic, 64.9% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_8:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34B.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C36.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 0.577ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i4  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_82(ASIC)  (to pixel_tick +)
+
+   Delay:               1.030ns  (22.7% logic, 77.3% route), 2 logic levels.
+
+ Constraint Details:
+
+      1.030ns physical path delay vga_sync_unit/SLICE_7 to textElement1/fontRom/mux_82 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 0.577ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_7 to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34C.CLK to     R22C34C.Q0 vga_sync_unit/SLICE_7 (from ext_clk_c)
+ROUTE         5     0.362     R22C34C.Q0 to     R21C34B.A1 pixel_y_3
+CTOF_DEL    ---     0.101     R21C34B.A1 to     R21C34B.F1 textElement1/SLICE_35
+ROUTE         2     0.434     R21C34B.F1 to EBR_R20C36.AD6 textElement1/fontAddress_3 (to pixel_tick)
+                  --------
+                    1.030   (22.7% logic, 77.3% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_7:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34C.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C36.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+
+Error: The following path exceeds requirements by 0.577ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              vga_sync_unit/v_count_reg_241__i4  (from ext_clk_c +)
+   Destination:    SP8KC      Port           textElement1/fontRom/mux_81(ASIC)  (to pixel_tick +)
+
+   Delay:               1.030ns  (22.7% logic, 77.3% route), 2 logic levels.
+
+ Constraint Details:
+
+      1.030ns physical path delay vga_sync_unit/SLICE_7 to textElement1/fontRom/mux_81 exceeds
+      (delay constraint based on source clock period of 10.071ns and destination clock period of 16.307ns)
+      0.052ns ADDR_HLD and
+      0.000ns delay constraint less
+     -1.555ns skew requirement (totaling 1.607ns) by 0.577ns
+
+ Physical Path Details:
+
+      Data path vga_sync_unit/SLICE_7 to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R22C34C.CLK to     R22C34C.Q0 vga_sync_unit/SLICE_7 (from ext_clk_c)
+ROUTE         5     0.362     R22C34C.Q0 to     R21C34B.A1 pixel_y_3
+CTOF_DEL    ---     0.101     R21C34B.A1 to     R21C34B.F1 textElement1/SLICE_35
+ROUTE         2     0.434     R21C34B.F1 to EBR_R20C39.AD6 textElement1/fontAddress_3 (to pixel_tick)
+                  --------
+                    1.030   (22.7% logic, 77.3% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path ext_clk to vga_sync_unit/SLICE_7:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R22C34C.CLK ext_clk_c
+                  --------
+                    1.344   (35.9% logic, 64.1% route), 1 logic levels.
+
+      Destination Clock Path ext_clk to textElement1/fontRom/mux_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.482         49.PAD to       49.PADDI ext_clk
+ROUTE        63     0.862       49.PADDI to    R25C36C.CLK ext_clk_c
+REG_DEL     ---     0.154    R25C36C.CLK to     R25C36C.Q0 vga_sync_unit/SLICE_82
+ROUTE        11     1.401     R25C36C.Q0 to EBR_R20C39.CLK pixel_tick
+                  --------
+                    2.899   (21.9% logic, 78.1% route), 2 logic levels.
+
+<A name="ptwr_hold_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "ext_clk_c" 99.295000 MHz |             |             |
+;                                       |     0.000 ns|     0.377 ns|   2  
+                                        |             |             |
+FREQUENCY NET "pixel_tick" 61.323000    |             |             |
+MHz ;                                   |     0.000 ns|    -1.036 ns|   1 *
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+1 preference(marked by "*" above) not met.
+
+----------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+----------------------------------------------------------------------------
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/pixel_N_286">textElement1/pixel_N_286</a>                |       1|      23|     27.38%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/fontAddress_9">textElement1/fontAddress_9</a>              |       2|      18|     21.43%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n770">textElement1/n770</a>                       |      23|      11|     13.10%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=pixel_x_5">pixel_x_5</a>                               |       6|      11|     13.10%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/fontAddress_6">textElement1/fontAddress_6</a>              |       2|      10|     11.90%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n1250">textElement1/n1250</a>                      |       7|      10|     11.90%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3224">textElement1/n3224</a>                      |       1|       9|     10.71%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3225">textElement1/n3225</a>                      |       1|       9|     10.71%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/pixel_N_288">textElement1/pixel_N_288</a>                |       1|       9|     10.71%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/pixel_N_282">textElement1/pixel_N_282</a>                |       1|       9|     10.71%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3172">textElement1/n3172</a>                      |       1|       9|     10.71%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/pixel_N_323">textElement1/pixel_N_323</a>                |       1|       9|     10.71%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=textElement1/n3173">textElement1/n3173</a>                      |       1|       9|     10.71%
+                                        |        |        |
+----------------------------------------------------------------------------
+
+
+<A name="ptwr_hold_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 2 clocks:
+
+Clock Domain: ext_clk_c   Source: ext_clk.PAD   Loads: 63
+   Covered under: FREQUENCY NET "ext_clk_c" 99.295000 MHz ;
+
+Clock Domain: pixel_tick   Source: vga_sync_unit/SLICE_82.Q0   Loads: 11
+   Covered under: FREQUENCY NET "pixel_tick" 61.323000 MHz ;
+
+   Data transfers from:
+   Clock Domain: ext_clk_c   Source: ext_clk.PAD
+      Covered under: FREQUENCY NET "pixel_tick" 61.323000 MHz ;   Transfers: 48
+
+
+<A name="ptwr_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
+---------------
+
+Timing errors: 84  Score: 18529
+Cumulative negative slack: 18529
+
+Constraints cover 36875 paths, 6 nets, and 1022 connections (94.63% coverage)
+
+
+
+<A name="ptwr_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
+---------------
+
+Timing errors: 4980 (setup), 84 (hold)
+Score: 764139530 (setup), 18529 (hold)
+Cumulative negative slack: 764158059 (764139530+18529)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>
