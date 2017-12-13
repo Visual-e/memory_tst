@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 100C Model Setup 'vga_sync:vga_sync_unit|mod2_reg'
+Slack : -8.539
+TNS   : -21.536
+
+Type  : Slow 1200mV 100C Model Setup 'ext_clk'
+Slack : -3.731
+TNS   : -304.964
+
+Type  : Slow 1200mV 100C Model Hold 'ext_clk'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'vga_sync:vga_sync_unit|mod2_reg'
+Slack : 0.572
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'ext_clk'
+Slack : -3.000
+TNS   : -161.055
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'vga_sync:vga_sync_unit|mod2_reg'
+Slack : -2.710
+TNS   : -6.705
+
+Type  : Slow 1200mV -40C Model Setup 'vga_sync:vga_sync_unit|mod2_reg'
+Slack : -7.474
+TNS   : -18.768
+
+Type  : Slow 1200mV -40C Model Setup 'ext_clk'
+Slack : -3.278
+TNS   : -258.633
+
+Type  : Slow 1200mV -40C Model Hold 'ext_clk'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'vga_sync:vga_sync_unit|mod2_reg'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'ext_clk'
+Slack : -3.000
+TNS   : -161.055
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'vga_sync:vga_sync_unit|mod2_reg'
+Slack : -2.649
+TNS   : -6.583
+
+Type  : Fast 1200mV -40C Model Setup 'vga_sync:vga_sync_unit|mod2_reg'
+Slack : -3.373
+TNS   : -8.085
+
+Type  : Fast 1200mV -40C Model Setup 'ext_clk'
+Slack : -1.277
+TNS   : -88.190
+
+Type  : Fast 1200mV -40C Model Hold 'ext_clk'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'vga_sync:vga_sync_unit|mod2_reg'
+Slack : 0.237
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'ext_clk'
+Slack : -3.000
+TNS   : -134.335
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'vga_sync:vga_sync_unit|mod2_reg'
+Slack : -1.000
+TNS   : -3.000
+
+------------------------------------------------------------

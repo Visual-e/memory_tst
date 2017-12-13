@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Nov 21 14:34:25 2017
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : memory_tst
+Top-level Entity Name : font_test
+Family : Cyclone IV E
+Device : EP4CE10E22I7
+Timing Models : Final
+Total logic elements : 336 / 10,320 ( 3 % )
+    Total combinational functions : 315 / 10,320 ( 3 % )
+    Dedicated logic registers : 124 / 10,320 ( 1 % )
+Total registers : 124
+Total pins : 37 / 92 ( 40 % )
+Total virtual pins : 0
+Total memory bits : 16,384 / 423,936 ( 4 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
